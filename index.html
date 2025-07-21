@@ -32,7 +32,7 @@
           <div id="result"></div>
         </div>
         <div class="buttons">
-          <button onclick="clearDisplay()">C</button>
+          <button onclick="clearDisplay()"><b>C</b></button>
           <button onclick="appendValue('/')">÷</button>
           <button onclick="appendValue('*')">x</button>
           <button onclick="deleteLast()">⌫</button>
@@ -50,11 +50,22 @@
           <button onclick="appendValue('1')">1</button>
           <button onclick="appendValue('2')">2</button>
           <button onclick="appendValue('3')">3</button>
-          <button class="equal" onclick="calculate()">=</button>
 
           <button onclick="appendValue('%')">%</button>
           <button onclick="appendValue('0')">0</button>
           <button onclick="appendValue('.')">.</button>
+          <button onclick="applyFunction('sin')">sin</button>
+          <button onclick="applyFunction('cos')">cos</button>
+        </div>
+        <div class="scientific-buttons">
+          <button onclick="applyFunction('sqrt')">√x</button>
+          <button onclick="applyFunction('square')">x²</button>
+          <button onclick="applyFunction('tan')">tan</button>
+          <button class="equal" onclick="calculate()"><b>=</b></button>
+
+          <button onclick="applyFunction('inverse')">1/x</button>
+          <button onclick="applyFunction('log')">log</button>
+          <button onclick="applyFunction('ln')">ln</button>
         </div>
       </div>
     </div>

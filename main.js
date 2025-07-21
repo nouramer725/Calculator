@@ -70,3 +70,49 @@ document.addEventListener("keydown", function (event) {
     calculate();
   }
 });
+
+function applyFunction(func) {
+  let current = parseFloat(
+    document.getElementById("result").innerText || expression
+  );
+  if (isNaN(current)) {
+    alert("Please calculate a value first.");
+    return;
+  }
+
+  let result;
+  switch (func) {
+    case "sin":
+      result = Math.sin(current);
+      break;
+    case "cos":
+      result = Math.cos(current);
+      break;
+    case "tan":
+      result = Math.tan(current);
+      break;
+    case "sqrt":
+      result = Math.sqrt(current);
+      break;
+    case "square":
+      result = Math.pow(current, 2);
+      break;
+    case "inverse":
+      result = 1 / current;
+      break;
+    case "log":
+      result = Math.log10(current);
+      break;
+    case "ln":
+      result = Math.log(current);
+      break;
+    default:
+      return;
+  }
+
+  document.getElementById("expression").innerText = `${func}(${current})`;
+  document.getElementById("result").innerText = result;
+
+  history.unshift(`${func}(${current}) = ${result}`);
+  updateHistory();
+}
