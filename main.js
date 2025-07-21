@@ -49,7 +49,11 @@ function toggleHistory() {
     container.style.display === "none" ? "block" : "none";
 }
 
-// Keyboard Support
+function clearHistory() {
+  history = [];
+  document.getElementById("historyList").innerHTML = "";
+}
+
 document.addEventListener("keydown", function (event) {
   const key = event.key;
 

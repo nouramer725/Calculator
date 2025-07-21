@@ -124,3 +124,16 @@ button:hover {
   padding-bottom: 5px;
   border-bottom: 1px dashed #ccc;
 }
+
+.clear-history-btn {
+  background-color: rgb(56, 56, 56);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 25px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
