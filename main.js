@@ -1,4 +1,5 @@
 let expression = "";
+let history = [];
 
 function appendValue(val) {
   expression += val;
@@ -20,11 +21,35 @@ function calculate() {
   try {
     const result = eval(expression);
     document.getElementById("result").innerText = result;
+
+    // Add to history
+    history.unshift(`${expression} = ${result}`);
+    updateHistory();
+
+    expression = result.toString(); // Allow chained calculations
   } catch {
     document.getElementById("result").innerText = "Error";
   }
 }
 
+function updateHistory() {
+  const historyList = document.getElementById("historyList");
+  historyList.innerHTML = "";
+
+  history.slice(0, 10).forEach((entry) => {
+    const li = document.createElement("li");
+    li.textContent = entry;
+    historyList.appendChild(li);
+  });
+}
+
+function toggleHistory() {
+  const container = document.getElementById("historyContainer");
+  container.style.display =
+    container.style.display === "none" ? "block" : "none";
+}
+
+// Keyboard Support
 document.addEventListener("keydown", function (event) {
   const key = event.key;
 

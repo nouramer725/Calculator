@@ -5,12 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator App</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
   </head>
   <body>
     <div class="app-container">
       <h1 class="header">Calculator App</h1>
-
       <div class="calculator">
+        <div class="history-toggle" onclick="toggleHistory()">
+          <i class="fas fa-history"></i>
+        </div>
+        <div class="history-container" id="historyContainer">
+          <h3>History</h3>
+          <ul id="historyList"></ul>
+        </div>
+        <br />
         <div class="display">
           <div id="expression"></div>
           <div id="result"></div>
